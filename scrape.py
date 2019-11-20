@@ -7,7 +7,7 @@ r = requests.get(url)
 
 soup = BeautifulSoup(r.text, 'lxml')
 
-data = [["Player", "Position", "Age", "Annual Salary", "Weekly Salary"]]
+data = [["Player", "Position", "Age", "Annual Salary", "Weekly Salary", "Club"]]
 rows = soup.find_all('tr')
 
 for tr in soup.find_all('tr'): #goes through tr elements
@@ -18,13 +18,26 @@ for tr in soup.find_all('tr'): #goes through tr elements
         if (tdC == 0):
             newCol = col.split('\n')
             try:
-                rowData.append(newCol[1])
+                if len(newCol[1]) > 0:
+                    rowData.append(newCol[1])
             except:
                 continue
         else:
-            rowData.append(col) #appends data to column
+            col.strip('"');
+            if tdC < 3:
+                rowData.append(col) #appends data to column
+            if tdC > 3:
+                col = col[1:].replace(",", "")
+                try:
+                    col = int(col)
+                    rowData.append(int(col))
+                except:
+                    continue
         tdC +=1
-    data.append(rowData)
+    if len(rowData) > 0:
+        if type(rowData[-1]) is int:
+            rowData.append("BOU") 
+            data.append(rowData)
 
 with open("output.csv", 'w') as csvfile:
     csvwriter = csv.writer(csvfile)

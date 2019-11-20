@@ -1,8 +1,8 @@
 # Scrape
 
-There's not much to this repository at the moment. 
+For my CIS 451 (Database Processing) final project, I am modeling european soccer. 
 
-The current objective is to simply get some practice "scraping" data off the web. 
+This repository will mostly include the python scripts that I write to collect the data for my tables.
+Eventually, it will include php, html, sql, and a link to the website.
 
-Ideally, at somepoint in the future this can turn into something cool. The ultimate goal is to harvest enough data where 
-I can start doing some real analysis and predictions. Until then, enjoy...
+Until then...
