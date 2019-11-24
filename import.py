@@ -18,6 +18,5 @@ with open("mscPData.csv") as data:
         mycursor.execute(sql, values)
 
 db.commit()
-print(mycursor.rowcount, "records inserted")
 mycursor.close()
 db.close()
