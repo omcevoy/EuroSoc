@@ -1,6 +1,6 @@
-# Scrape
+# EuroSoc
 
-For my CIS 451 (Database Processing) final project, I am modeling european soccer. 
+### For my CIS 451 (Database Processing) final project, I chose to model European Soccer 
 
 This repository includes the python scripts I wrote to scrape data off the internet, python scripts to import data from a csv file to the sql database, the csv files themselves, and of course the sql file.  Eventually, this repo will include a few php files as well as a link to the website. Unfortunately, due to time restrictions, not all of the data is accurate. Fake data was generated to populate the managers table and fake data will be generated to populate the rest of the player data. Eventually, I will try to populate them with exclusively real data.
 
