@@ -146,6 +146,31 @@ INSERT INTO `manager` VALUES (1,'Alister','Treswell',32,'England','1. FC Koln'),
 UNLOCK TABLES;
 
 --
+-- Table structure for table `owners`
+--
+
+DROP TABLE IF EXISTS `owners`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `owners` (
+  `club_name` varchar(255) NOT NULL,
+  `owner` varchar(255) DEFAULT NULL,
+  `manager_lname` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`club_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `owners`
+--
+
+LOCK TABLES `owners` WRITE;
+/*!40000 ALTER TABLE `owners` DISABLE KEYS */;
+INSERT INTO `owners` VALUES ('AC Milan','Urban Maffy','MacLleese'),('ACF Fiorentina','Delmer July','Pimblotte'),('AFC Bournemouth','Kellie Bisiker','Pettyfer'),('Amiens SC','Yuri Saldler','Poynzer'),('Angers SCO','Nicolina Bergen','Latek'),('Arsenal FC','Hattie Cattrell','Privost'),('AS Monaco FC','Tristan Loy','Sahnow'),('AS Roma','Giles Linsey','Bissex'),('AS Saint-Etienne','Frederica Huffer','Dyball'),('Aston Villa FC','Fairfax De Gogay','Whitnall'),('Atalanta BC','Dianne Duiged','Ezele'),('Athletic Bilbao','Lorena McCrann','Cromack'),('Atletico Madrid','Joshua Thorald','MacDuffie'),('Bayer 04 Leverkusen','Goraud Torbett','Sego'),('Bologna FC 1909','Doralynne Aldhouse','Pattington'),('Borussia Dortmund','Temp Cremin','Alwood'),('Borussia Monchengladbach','Selene Joiris','Elphee'),('Brescia Calcio','Daveta Simononsky','MacKaig'),('Brighton & Hove Albion FC','Ruthanne Cargo','Pomphrey'),('Burnley FC','Othelia Nel','Krook'),('CA Osasuna','Xenos McCloch','Limon'),('Cagliari Calcio','Elicia Canavan','Paolotto'),('CD Leganes','Farica Swinburne','Nelles'),('Celta Vigo','Claudelle Crim','Heddy'),('Chelsea FC','Hoebart Jedryka','Hallard'),('Crystal Palace FC','Banky Gawkes','Rauprich'),('Deportivo Alaves','Florinda Gauld','Snalham'),('Dijon FCO','Lanette Oddboy','Loody'),('Eintracht Frankfurt','Babette Buttle','Benettini'),('Everton FC','Cris Bloxland','Whitehouse'),('FC Augsburg','Candi Lambol','Nicholas'),('FC Barcelona','Liliane Martel','Blodgett'),('FC Bayern Munich','Issie Priden','Kadar'),('FC Girondins de Bordeaux','Devin Zanetello','Shynn'),('FC Koln','Shayna Yankishin','Treswell'),('FC Metz','Sharity O\'Cannavan','Cuckson'),('FC Nantes','Galvan Kropp','Pidgeon'),('FC Schalke 04','Waverley Torricella','Bartolomeoni'),('FC Union Berlin','Tessa Falls','Espinos'),('Fortuna Dusseldorf','Consalve Cherry','Benbrick'),('FSV Mainz 05','Bridie Cathery','Bellam'),('Genoa CFC','Hagen Claque','Heineking'),('Getafe CF','Alleen Heitz','Svanini'),('Granada CF','Hyacintha Dreye','Vanyashin'),('Hannover 96','Libbi Lowensohn','Dunseath'),('Hellas Verona FC','Chancey Kelso','Dykins'),('Hertha BSC','Tull Dobbins','Mowett'),('Inter Milan','Dena Blanko','Saveall'),('Juventus FC','Gerhardine Harme','Lippi'),('Leicester City FC','Mariele Rutherfoord','Wardroper'),('Levante UD','Vonni Dennes','Savaage'),('Lille OSC','Philippe Blackshaw','Cowill'),('Liverpool FC','Lothaire Geelan','Creggan'),('Manchester City FC','Curtis Giovannardi','Leavold'),('Manchester United FC','Burr Lorinez','Greenham'),('Montpellier HSC','Aleda Mackneis','Slevin'),('Newcastle United FC','Ethelyn Toffler','Virr'),('Nimes Olympique','Karee Chaloner','House'),('Norwich City FC','Carolin Celler','Gook'),('OGC Nice','Wesley Mascall','Scallon'),('Olympique de Marseille','Garvin Halbard','Jiracek'),('Olympique Lyonnais','Cheslie Croci','Dronsfield'),('Paris Saint-Germain FC','Cleopatra Blackly','Holdworth'),('Parma Calcio 1913','Harrietta Duffie','Pareman'),('RB Leipzig','Bettye Pirri','Dibb'),('RC Strasbourg','Mable Moneypenny','Campling'),('RCD Espanyol','Corly Santer','Abyss'),('RCD Mallorca','Nate Buer','Woollacott'),('Real Betis','Burlie Baus','Yerbury'),('Real Madrid CF','Maitilde Kermott','Harbour'),('Real Sociedad','Vonni Simeoni','Tourmell'),('Real Valladolid','Rubi Vasilchikov','Eskriet'),('SC Freiburg','Amos Canedo','Ikins'),('SC Paderborn','Dyann Attac','Shuttell'),('SD Eibar','Gusti Evershed','Read'),('Sevilla FC','Hilliary Parcall','Rottery'),('Sheffield United FC','Cyrill Webborn','Shord'),('Southampton FC','Rosella Domoney','Boakes'),('SPAL','Darcey Cominetti','Cisson'),('SS Lazio','Noelyn Hairon','Hazelgrove'),('SSC Napoli','Kare Stoodley','Cockhill'),('Stade de Reims','Florinda Konzel','Jaram'),('Stade Rennais FC','Giffy Husselbee','Howells'),('SV Werder Bremen','Dex Zeplin','Lenthall'),('Torino FC','Roxanne Benninger','Radki'),('Tottenham Hotspur FC','Dionisio Bolesworth','William'),('Toulouse FC','Randolf Marquet','Tellesson'),('TSG 1899 Hoffenheim','Fifine Gatchel','Sharrem'),('UC Sampdoria','Torrey Rubinsky','Danielut'),('Udinese Calcio','Peyter Hallbird','Warr'),('US Lecce','Velvet Smetoun','Varne'),('US Sassuolo Calcio','Isabelita D\'Angeli','Antoniazzi'),('Valencia CF','Angelika English','Curnnokk'),('VFB Stuttgart','Frannie Jimenez','Pischoff'),('VFL Wolfsburg','Claudia Henric','Geraghty'),('Villareal CF','Nikaniki Ambrogini','Fellowes'),('Watford FC','Humfried Agglione','Whitehorn'),('West Ham United FC','Sidonnie Hindrich','Bartke');
+/*!40000 ALTER TABLE `owners` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `player`
 --
 
@@ -202,6 +227,31 @@ INSERT INTO `refs` VALUES (99,'Berk','Simonaitis',53,'EPL'),(100,'Christophe','L
 UNLOCK TABLES;
 
 --
+-- Table structure for table `sponsors`
+--
+
+DROP TABLE IF EXISTS `sponsors`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sponsors` (
+  `club` varchar(255) NOT NULL,
+  `kit_sponsor` varchar(255) DEFAULT NULL,
+  `drink_sponsor` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`club`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sponsors`
+--
+
+LOCK TABLES `sponsors` WRITE;
+/*!40000 ALTER TABLE `sponsors` DISABLE KEYS */;
+INSERT INTO `sponsors` VALUES ('AC Milan','Under Armour','Gatorade'),('ACF Fiorentina','Umpro','Voss'),('AFC Bournemouth','Puma','Powerade'),('Amiens SC','Puma','Gatorade'),('Angers SCO','Umpro','Vitamin Water'),('Arsenal FC','Adidas','Dasani'),('AS Monaco FC','Adidas','Gatorade'),('AS Roma','Umpro','Powerade'),('AS Saint-Etienne','Nike','Dasani'),('Aston Villa FC','Puma','Dasani'),('Atalanta BC','Under Armour','Vitamin Water'),('Athletic Bilbao','Umpro','Gatorade'),('Atletico Madrid','Adidas','Powerade'),('Bayer 04 Leverkusen','Puma','Voss'),('Bologna FC 1909','Adidas','Vitamin Water'),('Borussia Dortmund','Puma','Powerade'),('Borussia Monchengladbach','Puma','Gatorade'),('Brescia Calcio','Umpro','Gatorade'),('Brighton & Hove Albion FC','Under Armour','Dasani'),('Burnley FC','Umpro','Vitamin Water'),('CA Osasuna','Umpro','Powerade'),('Cagliari Calcio','Umpro','Dasani'),('CD Leganes','Nike','Gatorade'),('Celta Vigo','Adidas','Gatorade'),('Chelsea FC','Adidas','Powerade'),('Crystal Palace FC','Nike','Dasani'),('Deportivo Alaves','Puma','Gatorade'),('Dijon FCO','Umpro','Gatorade'),('Eintracht Frankfurt','Under Armour','Vitamin Water'),('Everton FC','Adidas','Powerade'),('FC Augsburg','Nike','Vitamin Water'),('FC Barcelona','Puma','Voss'),('FC Bayern Munich','Nike','Gatorade'),('FC Girondins de Bordeaux','Adidas','Gatorade'),('FC Koln','Puma','Powerade'),('FC Metz','Under Armour','Dasani'),('FC Nantes','Adidas','Powerade'),('FC Schalke 04','Under Armour','Gatorade'),('FC Union Berlin','Adidas','Vitamin Water'),('Fortuna Dusseldorf','Under Armour','Dasani'),('FSV Mainz 05','Puma','Voss'),('Genoa CFC','Umpro','Vitamin Water'),('Getafe CF','Umpro','Gatorade'),('Granada CF','Nike','Powerade'),('Hannover 96','Puma','Voss'),('Hellas Verona FC','Adidas','Voss'),('Hertha BSC','Under Armour','Vitamin Water'),('Inter Milan','Nike','Voss'),('Juventus FC','Puma','Dasani'),('Leicester City FC','Umpro','Powerade'),('Levante UD','Under Armour','Powerade'),('Lille OSC','Nike','Dasani'),('Liverpool FC','Adidas','Dasani'),('Manchester City FC','Adidas','Vitamin Water'),('Manchester United FC','Under Armour','Gatorade'),('Montpellier HSC','Puma','Powerade'),('Newcastle United FC','Umpro','Dasani'),('Nimes Olympique','Nike','Powerade'),('Norwich City FC','Puma','Dasani'),('OGC Nice','Under Armour','Powerade'),('Olympique de Marseille','Puma','Vitamin Water'),('Olympique Lyonnais','Umpro','Vitamin Water'),('Paris Saint-Germain FC','Nike','Powerade'),('Parma Calcio 1913','Puma','Dasani'),('RB Leipzig','Umpro','Vitamin Water'),('RC Strasbourg','Umpro','Gatorade'),('RCD Espanyol','Nike','Powerade'),('RCD Mallorca','Under Armour','Powerade'),('Real Betis','Adidas','Gatorade'),('Real Madrid CF','Adidas','Dasani'),('Real Sociedad','Adidas','Gatorade'),('Real Valladolid','Adidas','Gatorade'),('SC Freiburg','Under Armour','Dasani'),('SC Paderborn','Umpro','Dasani'),('SD Eibar','Umpro','Powerade'),('Sevilla FC','Under Armour','Vitamin Water'),('Sheffield United FC','Adidas','Gatorade'),('Southampton FC','Nike','Gatorade'),('SPAL','Nike','Powerade'),('SS Lazio','Nike','Vitamin Water'),('SSC Napoli','Nike','Powerade'),('Stade de Reims','Adidas','Dasani'),('Stade Rennais FC','Puma','Gatorade'),('SV Werder Bremen','Nike','Voss'),('Torino FC','Under Armour','Gatorade'),('Tottenham Hotspur FC','Umpro','Gatorade'),('Toulouse FC','Adidas','Gatorade'),('TSG 1899 Hoffenheim','Under Armour','Gatorade'),('UC Sampdoria','Puma','Gatorade'),('Udinese Calcio','Nike','Dasani'),('US Lecce','Under Armour','Dasani'),('US Sassuolo Calcio','Puma','Gatorade'),('Valencia CF','Adidas','Dasani'),('VFB Stuttgart','Nike','Vitamin Water'),('VFL Wolfsburg','Nike','Gatorade'),('Villareal CF','Umpro','Dasani'),('Watford FC','Puma','Voss'),('West Ham United FC','Adidas','Vitamin Water');
+/*!40000 ALTER TABLE `sponsors` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `stadium`
 --
 
@@ -236,4 +286,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-01 16:09:41
+-- Dump completed on 2019-12-03 15:10:25
