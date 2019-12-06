@@ -1,0 +1,63 @@
+//the average age of each position (Defender, Midfielder, Forward, Goalkeeper)
+    SELECT position, AVG(age)
+    FROM player
+    group by position;
+
+
+//top x largest club payrolls
+
+    SELECT club_name, SUM(weekly_wage) as payroll
+    from player
+    group by club_name
+    order by payroll desc
+    limit 10;   
+
+//average age of each league
+
+    SELECT league_code, AVG(age) as average_age
+    FROM league JOIN club USING(league_code)
+        JOIN player USING(club_name)
+    GROUP BY league_code;
+
+//average age of each team
+    SELECT club_name, AVG(age) as average_age
+    FROM player
+    GROUP BY club_name
+
+//list of all teams with a teenager on their roster (and how many)
+    SELECT club_name, count(*) as num_of_teens
+        FROM club JOIN player USING(club_name)
+        WHERE age < 20
+        GROUP BY club_name
+        ORDER BY num_of_teens desc;
+
+//shows number of managers born in __
+    SELECT cob, COUNT(*) as count
+        FROM manager
+        GROUP BY cob
+        ORDER BY count desc;
+
+//shows average age of each stadium in each league
+    SELECT league_name, AVG(2019 - YEAR(year_build)) as stadium_age 
+        FROM club JOIN league USING(league_code) 
+        JOIN stadium ON stadium = stad_name 
+        GROUP BY league_name;
+
+//shows the club with the newest stadium
+    SELECT club_name, stadium, capacity, YEAR(year_build) as Year_Built 
+        FROM club JOIN stadium ON stadium = stad_name 
+        WHERE YEAR(year_build) = (SELECT MAX(YEAR(year_build)) from stadium);
+
+//select the __ newest stadiums and their respective clubs
+    SELECT club_name, stadium, capacity, YEAR(year_build) as Year_Built 
+        FROM club JOIN stadium ON stadium = stad_name 
+        ORDER BY YEAR(year_build) desc
+        LIMIT 5
+
+//selects all stadiums where more than one team plays
+    SELECT stadium, count 
+    FROM (SELECT stadium, COUNT(*) as count 
+          FROM stadium JOIN club ON stadium = stad_name 
+          GROUP BY stadium) stadCount 
+    WHERE count > 1;
+ 
