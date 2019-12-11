@@ -151,14 +151,14 @@ DROP TABLE IF EXISTS `manager`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `manager` (
-  `managerID` int(11) NOT NULL AUTO_INCREMENT,
+  `conID` int(11) NOT NULL,
   `fname` varchar(100) DEFAULT NULL,
   `lname` varchar(100) DEFAULT NULL,
   `age` int(11) DEFAULT NULL,
   `cob` varchar(255) DEFAULT NULL,
-  `club` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`managerID`)
-) ENGINE=InnoDB AUTO_INCREMENT=99 DEFAULT CHARSET=latin1;
+  `club_name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`conID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -204,15 +204,15 @@ DROP TABLE IF EXISTS `player`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `player` (
-  `playerID` int(11) NOT NULL AUTO_INCREMENT,
+  `conID` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `position` varchar(3) DEFAULT NULL,
   `age` int(11) DEFAULT NULL,
   `weekly_wage` int(11) DEFAULT NULL,
   `club_name` varchar(255) DEFAULT NULL,
   `country_of_birth` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`playerID`)
-) ENGINE=InnoDB AUTO_INCREMENT=1248 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`conID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -233,13 +233,13 @@ DROP TABLE IF EXISTS `refs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `refs` (
-  `refID` int(11) NOT NULL AUTO_INCREMENT,
+  `conID` int(11) NOT NULL,
   `fname` varchar(100) DEFAULT NULL,
   `lname` varchar(100) DEFAULT NULL,
   `age` int(11) DEFAULT NULL,
   `league_code` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`refID`)
-) ENGINE=InnoDB AUTO_INCREMENT=175 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`conID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -248,7 +248,7 @@ CREATE TABLE `refs` (
 
 LOCK TABLES `refs` WRITE;
 /*!40000 ALTER TABLE `refs` DISABLE KEYS */;
-INSERT INTO `refs` VALUES (99,'Berk','Simonaitis',53,'EPL'),(100,'Christophe','Louw',21,'EPL'),(101,'Kaleb','Albasini',31,'EPL'),(102,'Lannie','Trimme',42,'EPL'),(103,'Colin','Pearcey',59,'EPL'),(104,'Karel','Ianne',24,'EPL'),(105,'West','Allder',24,'EPL'),(106,'Myles','Lumm',34,'EPL'),(107,'Bren','Tembey',38,'EPL'),(108,'Basil','Matusiak',25,'EPL'),(109,'Eldin','Elsegood',59,'EPL'),(110,'Edlin','Wintle',33,'EPL'),(111,'Meade','Peris',60,'EPL'),(112,'Vincents','Gerin',61,'EPL'),(113,'Langston','Groucutt',40,'SLA'),(114,'Maxie','Castelletti',43,'SLA'),(115,'Logan','Wettern',38,'SLA'),(116,'Chev','Snowden',47,'SLA'),(117,'Weylin','Todhunter',64,'SLA'),(118,'Gareth','Rhydderch',65,'SLA'),(119,'Tyson','Barnsdall',23,'SLA'),(120,'Jory','de Savery',21,'SLA'),(121,'Thorn','Lorroway',61,'SLA'),(122,'Bevan','Markovic',50,'SLA'),(123,'Hagan','Peerless',35,'SLA'),(124,'Lorenzo','Costall',57,'SLA'),(125,'Addy','Orteaux',41,'SLA'),(126,'Aluin','Chappelow',51,'SLA'),(127,'Natale','Fedynski',24,'SLA'),(128,'Devlen','Iacovini',41,'ISA'),(129,'Isidoro','Braunston',57,'ISA'),(130,'Osbert','Colquyte',36,'ISA'),(131,'Casey','Sheara',51,'ISA'),(132,'Arturo','Leisk',52,'ISA'),(133,'Irving','Grubey',31,'ISA'),(134,'Kerk','Rown',31,'ISA'),(135,'Cirilo','Dhennin',24,'ISA'),(136,'Euell','Massot',41,'ISA'),(137,'Mandel','Bratchell',20,'ISA'),(138,'Abbe','Taylder',60,'ISA'),(139,'Freedman','Shellibeer',21,'ISA'),(140,'Skipp','Giametti',22,'ISA'),(141,'Giavani','Grundle',42,'ISA'),(142,'Dalt','Nunnerley',35,'ISA'),(143,'Ambrosius','Siddens',42,'FL1'),(144,'Darb','Trousdell',32,'FL1'),(145,'Tiler','Kersaw',41,'FL1'),(146,'Benjamen','Seckom',50,'FL1'),(147,'Frank','Redington',42,'FL1'),(148,'Park','Mottram',64,'FL1'),(149,'Morty','Roomes',60,'FL1'),(150,'Pace','Agar',51,'FL1'),(151,'Kennith','Tellenbroker',64,'FL1'),(152,'Hersh','Garbar',58,'FL1'),(153,'Trever','Kingsnoad',23,'FL1'),(154,'Andrey','Attfield',41,'FL1'),(155,'Matias','Saylor',54,'FL1'),(156,'Merwin','Pouck',38,'FL1'),(157,'Pedro','Gilberthorpe',32,'FL1'),(158,'Ronald','Sandeson',24,'FL1'),(159,'Xavier','Steffens',59,'GBL'),(160,'Symon','Ledbetter',52,'GBL'),(161,'Salomone','Mayger',37,'GBL'),(162,'Terrill','Haddington',65,'GBL'),(163,'Rollins','Abrahamowitcz',31,'GBL'),(164,'Gothart','Owers',24,'GBL'),(165,'Clevey','Roof',45,'GBL'),(166,'Andres','Alps',62,'GBL'),(167,'Chip','Unthank',64,'GBL'),(168,'Lev','Jakubowicz',28,'GBL'),(169,'Zachery','Pikesley',25,'GBL'),(170,'Granny','De Laspee',38,'GBL'),(171,'Witty','Boate',37,'GBL'),(172,'Fraser','Bushby',43,'GBL'),(173,'Cornell','Slite',44,'GBL'),(174,'Dunc','Ovitz',22,'GBL');
+INSERT INTO `refs` VALUES (20099,'Berk','Simonaitis',53,'EPL'),(20100,'Christophe','Louw',21,'EPL'),(20101,'Kaleb','Albasini',31,'EPL'),(20102,'Lannie','Trimme',42,'EPL'),(20103,'Colin','Pearcey',59,'EPL'),(20104,'Karel','Ianne',24,'EPL'),(20105,'West','Allder',24,'EPL'),(20106,'Myles','Lumm',34,'EPL'),(20107,'Bren','Tembey',38,'EPL'),(20108,'Basil','Matusiak',25,'EPL'),(20109,'Eldin','Elsegood',59,'EPL'),(20110,'Edlin','Wintle',33,'EPL'),(20111,'Meade','Peris',60,'EPL'),(20112,'Vincents','Gerin',61,'EPL'),(20113,'Langston','Groucutt',40,'SLA'),(20114,'Maxie','Castelletti',43,'SLA'),(20115,'Logan','Wettern',38,'SLA'),(20116,'Chev','Snowden',47,'SLA'),(20117,'Weylin','Todhunter',64,'SLA'),(20118,'Gareth','Rhydderch',65,'SLA'),(20119,'Tyson','Barnsdall',23,'SLA'),(20120,'Jory','de Savery',21,'SLA'),(20121,'Thorn','Lorroway',61,'SLA'),(20122,'Bevan','Markovic',50,'SLA'),(20123,'Hagan','Peerless',35,'SLA'),(20124,'Lorenzo','Costall',57,'SLA'),(20125,'Addy','Orteaux',41,'SLA'),(20126,'Aluin','Chappelow',51,'SLA'),(20127,'Natale','Fedynski',24,'SLA'),(20128,'Devlen','Iacovini',41,'ISA'),(20129,'Isidoro','Braunston',57,'ISA'),(20130,'Osbert','Colquyte',36,'ISA'),(20131,'Casey','Sheara',51,'ISA'),(20132,'Arturo','Leisk',52,'ISA'),(20133,'Irving','Grubey',31,'ISA'),(20134,'Kerk','Rown',31,'ISA'),(20135,'Cirilo','Dhennin',24,'ISA'),(20136,'Euell','Massot',41,'ISA'),(20137,'Mandel','Bratchell',20,'ISA'),(20138,'Abbe','Taylder',60,'ISA'),(20139,'Freedman','Shellibeer',21,'ISA'),(20140,'Skipp','Giametti',22,'ISA'),(20141,'Giavani','Grundle',42,'ISA'),(20142,'Dalt','Nunnerley',35,'ISA'),(20143,'Ambrosius','Siddens',42,'FL1'),(20144,'Darb','Trousdell',32,'FL1'),(20145,'Tiler','Kersaw',41,'FL1'),(20146,'Benjamen','Seckom',50,'FL1'),(20147,'Frank','Redington',42,'FL1'),(20148,'Park','Mottram',64,'FL1'),(20149,'Morty','Roomes',60,'FL1'),(20150,'Pace','Agar',51,'FL1'),(20151,'Kennith','Tellenbroker',64,'FL1'),(20152,'Hersh','Garbar',58,'FL1'),(20153,'Trever','Kingsnoad',23,'FL1'),(20154,'Andrey','Attfield',41,'FL1'),(20155,'Matias','Saylor',54,'FL1'),(20156,'Merwin','Pouck',38,'FL1'),(20157,'Pedro','Gilberthorpe',32,'FL1'),(20158,'Ronald','Sandeson',24,'FL1'),(20159,'Xavier','Steffens',59,'GBL'),(20160,'Symon','Ledbetter',52,'GBL'),(20161,'Salomone','Mayger',37,'GBL'),(20162,'Terrill','Haddington',65,'GBL'),(20163,'Rollins','Abrahamowitcz',31,'GBL'),(20164,'Gothart','Owers',24,'GBL'),(20165,'Clevey','Roof',45,'GBL'),(20166,'Andres','Alps',62,'GBL'),(20167,'Chip','Unthank',64,'GBL'),(20168,'Lev','Jakubowicz',28,'GBL'),(20169,'Zachery','Pikesley',25,'GBL'),(20170,'Granny','De Laspee',38,'GBL'),(20171,'Witty','Boate',37,'GBL'),(20172,'Fraser','Bushby',43,'GBL'),(20173,'Cornell','Slite',44,'GBL'),(20174,'Dunc','Ovitz',22,'GBL');
 /*!40000 ALTER TABLE `refs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -312,4 +312,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-05 18:47:53
+-- Dump completed on 2019-12-10 17:48:31
