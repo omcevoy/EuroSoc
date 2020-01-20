@@ -2,7 +2,7 @@
 
 ### CIS 451 (Database Processing) Final Project
 
-For the final project my group (Nicholas Fay & myself) decided that we would model European Soccer. This repository includes the python scripts I wrote to scrape data off the internet, scripts to import data from a csv file to the sql database, and the csv files themselves, and of course the sql file. Unfortunately, due to time restrictions, not all of the data is accurate. Fake data was generated to populate some of the table and fake data will be generated to populate the rest of the player data. Eventually, I will try to populate the database with exclusively real data. 
+For the final project my group (Nicholas Fay & myself) decided that we would model European Soccer. This repository includes the python scripts I wrote to scrape data off the internet, scripts to import data from a csv file to the sql database, and the csv files themselves, and of course the sql file. Unfortunately, due to time restrictions, not all of the data is accurate. Fake data was generated to populate some of the table and fake data will be generated to populate the rest of the player data. 
 ------------------------------------------------------------------------------------------------------------------------------
 # Link
 http://ix.cs.uoregon.edu/~omcevoy/final.html
